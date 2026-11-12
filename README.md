@@ -41,10 +41,12 @@ On the one-wall map, a policy trained for 100 episodes with seed 42 repeatedly c
 
 ## Timing Result
 
-| Measurement | One-wall map (single run) | Two-wall detour (median of six runs) |
+Both columns report the median of six runs of each terminal command.
+
+| Measurement | One-wall map | Two-wall detour |
 | --- | ---: | ---: |
-| A* planning | 87.1 µs | 120.55 µs |
-| Q-learning training loop, 1,000 episodes with seed 42 | 39.087 ms | 61.350 ms |
-| Q-learning evaluation after training | 16.4 µs | 25.55 µs |
+| A* planning | 108.75 µs | 105.15 µs |
+| Q-learning training loop, 1,000 episodes with seed 42 | 39.553 ms | 56.024 ms |
+| Q-learning evaluation after training | 16.45 µs | 19.85 µs |
 
 The A* timer covers finding a route from the map. The Q-learning evaluation timer covers choosing and executing actions with a trained table. These results come from two fixed maps with a fixed start and goal on each.
