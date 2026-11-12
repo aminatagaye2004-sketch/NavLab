@@ -39,12 +39,12 @@ Q-learning matched the A* route length on both maps after 1,000 training episode
 
 On the one-wall map, a policy trained for 100 episodes with seed 42 repeatedly chose a blocked move at the start during evaluation. With 1,000 training episodes, it reached the goal in 18 moves.
 
-### Timing on the two-wall map
+## Timing Result
 
-| Measurement | Median of six runs |
-| --- | ---: |
-| A* planning | 120.55 µs |
-| Q-learning training loop, 1,000 episodes with seed 42 | 61.350 ms |
-| Q-learning evaluation after training | 25.55 µs |
+| Measurement | One-wall map (single run) | Two-wall detour (median of six runs) |
+| --- | ---: | ---: |
+| A* planning | 87.1 µs | 120.55 µs |
+| Q-learning training loop, 1,000 episodes with seed 42 | 39.087 ms | 61.350 ms |
+| Q-learning evaluation after training | 16.4 µs | 25.55 µs |
 
 The A* timer covers finding a route from the map. The Q-learning evaluation timer covers choosing and executing actions with a trained table. These results come from two fixed maps with a fixed start and goal on each.
